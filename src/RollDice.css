@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    width: 12em;
+    height: 3.5em;
+    background: rgb(90, 54, 187);
+    color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.rolling {
+    background: black;
+}
