@@ -11,13 +11,11 @@ class RollDice extends Component {
             isRolling: false,
         };
         this.roll = this.roll.bind(this);
-        
-    }
+
+    };
 
 
     roll() {
-        const button = document.querySelector('.button');
-
         function throwDice() {
             const diceProps = ['one', 'two', 'three', 'four', 'five', 'six'];
             const index = Math.floor(Math.random() * 6);
@@ -26,27 +24,25 @@ class RollDice extends Component {
         };
 
         this.setState({ dice1: throwDice(), dice2: throwDice(), isRolling: true })
-        button.disabled = true;
-        button.classList.add('rolling')
 
         setTimeout(() => {
             this.setState({ isRolling: false })
-            button.disabled = false;
-            button.classList.remove('rolling')
-        }, 300)
+        }, 400)
     };
 
     animate(arg) {
-        return arg === 'die' ?  this.state.isRolling ? 'animate' : ''
-        : this.state.isRolling ? 'Rolling...' : 'Roll Dice!'
+        return arg === 'die' ? this.state.isRolling ? 'animate' : ''
+            : this.state.isRolling ? 'Rolling...' : 'Roll Dice!'
     };
 
     render() {
         return (
-            <div className='container'>
-                <Die num={this.state.dice1} roll={this.animate('die')} />
-                <Die num={this.state.dice2} roll={this.animate('die')} />
-                <button className='button' onClick={this.roll}>{this.animate('button')}</button>
+            <div className='RollDice'>
+                <div className='RollDiceContainer'>
+                    <Die num={this.state.dice1} roll={this.animate('die')} />
+                    <Die num={this.state.dice2} roll={this.animate('die')} />
+                </div>
+                <button className='button' onClick={this.roll} disabled={this.state.isRolling}>{this.animate('button')}</button>
             </div>
         );
     };

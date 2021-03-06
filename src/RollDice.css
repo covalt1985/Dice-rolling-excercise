@@ -1,18 +1,22 @@
-.container {
+.RollDice {
     display: flex;
-    align-items: center;
+    flex-flow: column nowrap;
+    min-width: 100vh
+}
+
+.RollDiceContainer {
+    display: flex;
     justify-content: center;
+    align-content: center;
 }
 
 .button {
-    position: absolute;
-    top: 50%;
+    align-self: center;
     width: 12em;
     height: 3.5em;
     background: rgb(90, 54, 187);
     color: white;
     border-radius: 10px;
-    box-sizing: border-box;
     outline: none;
     border: none;
     cursor: pointer;
@@ -21,9 +25,4 @@
 
 .button:hover {
     background: rgb(44, 26, 94);
-}
-
-.rolling {
-    pointer-events: none;
-    background: black;
 }

@@ -5,7 +5,7 @@ class Die extends Component {
     render() {
         return (
             <div>
-                <i className={`${this.props.num} ${this.props.roll}`}></i>
+                <i className={`die ${this.props.num} ${this.props.roll}`}></i>
             </div>
         );
     };
