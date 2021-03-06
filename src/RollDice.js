@@ -11,6 +11,7 @@ class RollDice extends Component {
             isRolling: false,
         };
         this.roll = this.roll.bind(this);
+        
     }
 
 
@@ -32,17 +33,20 @@ class RollDice extends Component {
             this.setState({ isRolling: false })
             button.disabled = false;
             button.classList.remove('rolling')
-        }, 500)
+        }, 300)
     };
 
+    animate(arg) {
+        return arg === 'die' ?  this.state.isRolling ? 'animate' : ''
+        : this.state.isRolling ? 'Rolling...' : 'Roll Dice!'
+    };
 
     render() {
-
         return (
             <div className='container'>
-                <Die num={this.state.dice1} roll={this.state.isRolling ? 'animate' : ''} />
-                <Die num={this.state.dice2} roll={this.state.isRolling ? 'animate' : ''}/>
-                <button className='button' onClick={this.roll}>{this.state.isRolling ? 'Rolling...' : 'Roll Dice!'}</button>
+                <Die num={this.state.dice1} roll={this.animate('die')} />
+                <Die num={this.state.dice2} roll={this.animate('die')} />
+                <button className='button' onClick={this.roll}>{this.animate('button')}</button>
             </div>
         );
     };

@@ -15,12 +15,15 @@
     box-sizing: border-box;
     outline: none;
     border: none;
+    cursor: pointer;
+    transition: 300ms;
 }
 
 .button:hover {
-    cursor: pointer;
+    background: rgb(44, 26, 94);
 }
 
 .rolling {
+    pointer-events: none;
     background: black;
 }

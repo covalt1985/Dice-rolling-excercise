@@ -5,7 +5,7 @@
 
 .animate{
     animation-name: roll;
-    animation-duration: 400ms;
+    animation-duration: 300ms;
     animation-iteration-count: 1;
 }
 
